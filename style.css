@@ -1,0 +1,124 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 { margin: 0; color: #00bcd4; }
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.openbtn:hover { background-color: #444; }
+
+/* সাইডবার ডিজাইন */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover { color: #f1f1f1; background-color: #333; }
+.sidebar .closebtn { position: absolute; top: 0; right: 25px; font-size: 36px; margin-left: 50px; }
+
+/* লেআউট */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+.view-section { display: none; }
+.view-section.active { display: flex; }
+
+.room-card {
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.room-card.clickable { cursor: pointer; }
+.room-card.clickable:hover { transform: scale(1.05); border: 1px solid #00bcd4; }
+
+.room-title { font-size: 20px; font-weight: bold; margin-bottom: 20px; color: #ff9800; }
+
+/* সেন্সর ও ডিভাইস */
+.sensor-data {
+    font-size: 18px;
+    color: #4CAF50;
+    margin-bottom: 15px;
+    text-align: left;
+    background: #2a2a2a;
+    padding: 10px;
+    border-radius: 10px;
+}
+.sensor-data p { margin: 5px 0; }
+
+hr { border: 1px solid #333; margin-bottom: 20px; width: 100%; }
+
+.full-width { width: 100%; max-width: 500px; }
+
+.device {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* টগল বাটন */
+.switch { position: relative; display: inline-block; width: 60px; height: 34px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #f44336; transition: .4s; border-radius: 34px; }
+.slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+input:checked + .slider { background-color: #4CAF50; }
+input:checked + .slider:before { transform: translateX(26px); }
+
+.loading { color: #888; font-size: 14px; margin-bottom: 10px; }

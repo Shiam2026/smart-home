@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমার স্মার্ট হোম</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" onclick="showSection('home')">🏠 হোম (সব রুম)</a>
+        <a href="#" onclick="showSection('room1')">🛏️ রুম ১ (সিয়ামের ঘর)</a>
+        <a href="#" onclick="showSection('room2')">🛏️ রুম ২ (মাঝের ঘর)</a>
+        <a href="#" onclick="showSection('room3')">📺 রুম ৩ (টিভি ঘর)</a>
+    </div>
+
+    <div id="main" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+        <div class="header">
+            <button class="openbtn" onclick="openNav()">&#9776; মেনু</button>
+            <h2>আমার স্মার্ট হোম</h2>
+        </div>
+        
+        <div class="loading" id="status">ডেটাবেসের সাথে যুক্ত হচ্ছে...</div>
+
+        <div id="home" class="container view-section active">
+            <div class="room-card clickable" onclick="showSection('room1')">
+                <div class="room-title">রুম ১ (সিয়ামের ঘর)</div>
+                <p>ক্লিক করে ভেতরে যান ➔</p>
+            </div>
+            <div class="room-card clickable" onclick="showSection('room2')">
+                <div class="room-title">রুম ২ (মাঝের ঘর)</div>
+                <p>ক্লিক করে ভেতরে যান ➔</p>
+            </div>
+            <div class="room-card clickable" onclick="showSection('room3')">
+                <div class="room-title">রুম ৩ (টিভি ঘর)</div>
+                <p>ক্লিক করে ভেতরে যান ➔</p>
+            </div>
+        </div>
+
+        <div id="room1" class="container view-section">
+            <div class="room-card full-width">
+                <div class="room-title">রুম ১ (সিয়ামের ঘর)</div>
+                <div class="sensor-data">
+                    <p>🌡️ তাপমাত্রা: <span id="Node1_Temp">--</span> °C</p>
+                    <p>💧 আর্দ্রতা: <span id="Node1_Hum">--</span> %</p>
+                </div>
+                <hr>
+                <div class="device">
+                    <span>ফ্যান</span>
+                    <label class="switch">
+                        <input type="checkbox" id="Node1_Relay1" onchange="toggleDevice('Node1', 'Relay1', this)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="device">
+                    <span>লাইট</span>
+                    <label class="switch">
+                        <input type="checkbox" id="Node1_Relay2" onchange="toggleDevice('Node1', 'Relay2', this)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="room2" class="container view-section">
+            <div class="room-card full-width">
+                <div class="room-title">রুম ২ (মাঝের ঘর)</div>
+                <div class="sensor-data">
+                    <p>🌡️ তাপমাত্রা: <span id="Node2_Temp">--</span> °C</p>
+                    <p>💧 আর্দ্রতা: <span id="Node2_Hum">--</span> %</p>
+                </div>
+                <hr>
+                <div class="device">
+                    <span>ফ্যান</span>
+                    <label class="switch">
+                        <input type="checkbox" id="Node2_Relay1" onchange="toggleDevice('Node2', 'Relay1', this)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="device">
+                    <span>লাইট</span>
+                    <label class="switch">
+                        <input type="checkbox" id="Node2_Relay2" onchange="toggleDevice('Node2', 'Relay2', this)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="room3" class="container view-section">
+            <div class="room-card full-width">
+                <div class="room-title">রুম ৩ (টিভি ঘর)</div>
+                <div class="sensor-data">
+                    <p>🌡️ তাপমাত্রা: <span id="Node3_Temp">--</span> °C</p>
+                    <p>💧 আর্দ্রতা: <span id="Node3_Hum">--</span> %</p>
+                </div>
+                <hr>
+                <div class="device">
+                    <span>ফ্যান</span>
+                    <label class="switch">
+                        <input type="checkbox" id="Node3_Relay1" onchange="toggleDevice('Node3', 'Relay1', this)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="device">
+                    <span>লাইট</span>
+                    <label class="switch">
+                        <input type="checkbox" id="Node3_Relay2" onchange="toggleDevice('Node3', 'Relay2', this)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
